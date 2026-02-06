@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Responsive, mobile-first fun web simulator called \"Insta Follower Hook\" that mimics an Instagram follower \"hook\" game (no real follower service), with a home form, fake 60-second processing, random outcome messages, and informational pages including a prominent disclaimer.",
+  "architectural_notes": [
+    "Pure frontend-only implementation (HTML/CSS/JS); no backend and no real API calls.",
+    "Client-side random outcome logic after a fixed 60-second simulated processing delay.",
+    "Username-only input; do not request or store passwords.",
+    "Include clear, prominent disclaimer content stating this is a simulator/game for entertainment only."
+  ],
+  "known_issues": [
+    "Deployment to production failed with a deployment error; user requested retry."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-mobile-first-home-page-for-the-game-named-insta-follower-hook-with-1-a-large-title-insta-follower-hook-2-subtitle-try-your-luck-get-free-instagram-followers-just-for-fun-3-a-text-only-input-labeled-instagram-username-do-not-request-or-accept-any-password-4-a-follower-amount-selector-offering-exactly-100-200-500-1000-5000-10000-and-5-a-primary-button-labeled-get-followers",
+      "title": "Create a responsive, mobile-first Home page for the game named \"Insta Follower Hook\" with: (1) a large title \"Insta Follower Hook\", (2) subtitle \"Try Your Luck – Get Free Instagram Followers (Just for Fun)\", (3) a text-only input labeled \"Instagram Username\" (do not request or accept any password), (4) a follower amount selector offering exactly: 100, 200, 500, 1000, 5000, 10000, and (5) a primary button labeled \"Get Followers\".",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-fake-processing-flow-on-get-followers-click-show-a-loading-state-containing-the-text-processing-your-request-please-wait-60-seconds-and-display-a-60-second-progress-indicator-progress-bar-or-spinner-that-lasts-60-seconds-then-randomly-show-exactly-one-result-message-from-the-following-list-a-please-try-again-after-some-time-b-server-busy-come-back-later-c-congratulations-followers-added-successfully-game-result",
+      "title": "Implement the fake processing flow on \"Get Followers\" click: show a loading state containing the text \"Processing your request… Please wait 60 seconds\" and display a 60-second progress indicator (progress bar or spinner) that lasts 60 seconds, then randomly show exactly ONE result message from the following list: (a) \"❌ Please try again after some time\" (b) \"⚠️ Server busy, come back later\" (c) \"🎉 Congratulations! Followers added successfully (Game Result)\".",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-site-navigation-menu-that-provides-routes-pages-for-home-how-it-works-disclaimer-about-us-contact-and-a-privacy-policy-page-to-support-the-footer-link-navigation-must-be-usable-on-mobile-e-g-collapsed-menu-hamburger-or-stacked-links-and-desktop",
+      "title": "Add site navigation (menu) that provides routes/pages for: Home, How It Works, Disclaimer, About Us, Contact, and a Privacy Policy page to support the footer link. Navigation must be usable on mobile (e.g., collapsed menu/hamburger or stacked links) and desktop.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-prominent-disclaimer-page-that-clearly-states-verbatim-line-breaks-optional-this-website-is-only-a-game-simulator-we-do-not-provide-real-instagram-followers-we-do-not-collect-passwords-this-is-made-for-entertainment-and-fun-purposes-only",
+      "title": "Create a prominent Disclaimer page that clearly states (verbatim, line breaks optional): \"This website is only a game / simulator. We do NOT provide real Instagram followers. We do NOT collect passwords. This is made for entertainment and fun purposes only.\"",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-how-it-works-page-that-lists-the-following-steps-in-order-wording-may-match-exactly-step-1-enter-your-instagram-username-step-2-select-followers-amount-step-3-click-get-followers-step-4-wait-and-see-the-game-result",
+      "title": "Create a How It Works page that lists the following steps in order (wording may match exactly): Step 1: Enter your Instagram username; Step 2: Select followers amount; Step 3: Click Get Followers; Step 4: Wait and see the game result.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-an-instagram-style-visual-design-across-the-app-pink-purple-gradient-accents-clean-card-based-layout-clear-buttons-and-mobile-first-spacing-typography-fun-emojis-may-be-used-in-ui-copy-without-reducing-readability",
+      "title": "Apply an Instagram-style visual design across the app: pink/purple gradient accents, clean card-based layout, clear buttons, and mobile-first spacing/typography. Fun emojis may be used in UI copy without reducing readability.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-global-footer-visible-across-pages-with-the-exact-text-insta-follower-hook-2026-just-a-fun-game-and-include-footer-links-to-disclaimer-and-privacy-policy-pages",
+      "title": "Add a global footer visible across pages with the exact text \"Insta Follower Hook © 2026 | Just a Fun Game\" and include footer links to Disclaimer and Privacy Policy pages.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-application-performs-no-real-instagram-follower-actions-do-not-call-external-apis-do-not-collect-store-passwords-and-do-not-require-any-backend-functionality-for-the-simulator-logic-random-outcome-and-timer-must-be-client-side-only",
+      "title": "Ensure the application performs no real Instagram follower actions: do not call external APIs, do not collect/store passwords, and do not require any backend functionality for the simulator logic (random outcome and timer must be client-side only).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-resolve-the-production-deployment-error-so-the-app-can-be-successfully-deployed-then-perform-a-fresh-production-deployment-retry-identify-the-root-cause-of-the-previous-deployment-failure-build-bundle-errors-canister-configuration-issues-frontend-asset-build-issues-or-backend-canister-build-issues-and-apply-the-minimal-code-config-changes-needed-to-make-deployment-succeed-without-changing-existing-app-behavior",
+      "title": "Resolve the production deployment error so the app can be successfully deployed, then perform a fresh production deployment retry. Identify the root cause of the previous deployment failure (build/bundle errors, canister configuration issues, frontend asset build issues, or backend canister build issues) and apply the minimal code/config changes needed to make deployment succeed without changing existing app behavior.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build responsive Home page UI with title/subtitle, username input (text only), follower amount selector (100–10000), and \"Get Followers\" button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement fake processing flow: 60-second loading/progress indicator and random result message after completion",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add site navigation and pages: Home, How It Works, Disclaimer, About Us, Contact",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create prominent Disclaimer page stating it is only a game/simulator, no real followers, no password collection, entertainment only",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create How It Works page with step-by-step instructions for the simulator",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Apply Instagram-style visual design (pink/purple gradient), clean card/button UI, mobile-first responsive layout, fun emojis allowed",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add footer with \"Insta Follower Hook © 2026 | Just a Fun Game\" plus links to Disclaimer and Privacy Policy",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement as pure HTML/CSS/JavaScript with no backend, no real API calls, and JS-only random result logic",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Insta Follower Hook",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

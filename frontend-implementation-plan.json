@@ -1,0 +1,54 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix production deployment failure by removing non-portable import aliases",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Eliminate the likely production build failure caused by unresolved @/ path aliases, keeping behavior identical and ensuring all existing routes and the Home simulator flow still work after redeploy.",
+      "acceptanceCriteria": [
+        "A production deployment completes successfully with no deployment errors.",
+        "After deployment, the app loads in the browser and the existing routes render (Home, How It Works, Disclaimer, About Us, Contact, Privacy Policy).",
+        "The Home page simulator flow still works end-to-end: click \"Get Followers\" shows the 60-second loading state and then shows exactly one random result message.",
+        "No new external API calls are introduced; the simulator logic remains client-side only."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Replace @/ import aliases (ui components and fakeProcessing) with relative imports so production bundling does not depend on missing path-alias configuration; preserve the existing 60-second simulator flow and UI behavior."
+        },
+        {
+          "path": "frontend/src/pages/HowItWorksPage.tsx",
+          "operation": "modify",
+          "description": "Replace @/ import alias for shadcn/ui Card with a relative import to avoid production build resolution failures; keep rendered content and layout unchanged."
+        },
+        {
+          "path": "frontend/src/pages/DisclaimerPage.tsx",
+          "operation": "modify",
+          "description": "Replace @/ import aliases for shadcn/ui Card and Alert with relative imports to ensure production build succeeds; keep lucide-react usage and page content unchanged."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Replace @/ import alias for shadcn/ui Card with a relative import so the production bundle does not rely on unresolved aliases; keep page copy and structure unchanged."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Replace @/ import alias for shadcn/ui Card with a relative import to prevent production build failures; keep lucide-react icons and links unchanged."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "operation": "modify",
+          "description": "Replace @/ import alias for shadcn/ui Card with a relative import to ensure production build compatibility; keep the policy text and layout unchanged."
+        },
+        {
+          "path": "frontend/src/components/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Replace @/ import aliases for shadcn/ui Button and Sheet components with relative imports to prevent unresolved alias errors in production builds; preserve navigation behavior and layout."
+        }
+      ]
+    }
+  ]
+}

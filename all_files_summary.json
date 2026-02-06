@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Simple Motoko actor exposing a hello() query that returns a greeting.",
+  "feature_evidence.json": "Feature evidence report describing deployment-fix work and listing affected frontend files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Text file containing prewritten summaries of various frontend source files.",
+  "frontend/index.css": "Tailwind base stylesheet defining theme variables, dark mode overrides, and global element styling.",
+  "frontend/index.html": "HTML entry point mounting the root div and loading the main TypeScript module.",
+  "frontend/src/App.tsx": "Sets up TanStack Router with layout and routes for all main pages.",
+  "frontend/src/components/Footer.tsx": "Footer component with copyright text and links to disclaimer, privacy policy, and caffeine.ai.",
+  "frontend/src/components/SiteLayout.tsx": "Layout component with header navigation, mobile sheet menu, main outlet, and footer.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and caches an authenticated or anonymous backend actor depending on Internet Identity state.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and provider managing Internet Identity authentication, login flow, and stored identity loading.",
+  "frontend/src/index.css": "Tailwind theme file defining OKLCH variables and Instagram gradient colors with utility classes.",
+  "frontend/src/lib/fakeProcessing.ts": "Simulates a 60‑second delay and returns a random follower‑processing result.",
+  "frontend/src/main.tsx": "Application bootstrap wiring React Query, Internet Identity provider, and global styles before rendering App.",
+  "frontend/src/pages/AboutPage.tsx": "Static About page describing the game, its mission, purpose, and safety reminders using multiple Cards.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page providing email addresses for inquiries, feedback, and help, plus a reminder that the game is a simulation.",
+  "frontend/src/pages/DisclaimerPage.tsx": "Disclaimer page explaining that the site is a simulation, provides no real followers, collects no passwords, and outputs random results.",
+  "frontend/src/pages/HomePage.tsx": "Main game page allowing users to enter a username, select follower amounts, run a fake processing flow, and view a random result.",
+  "frontend/src/pages/HowItWorksPage.tsx": "Explains the four steps of using the game and includes a note that results are random and for entertainment only.",
+  "frontend/src/pages/PrivacyPolicyPage.tsx": "Privacy policy page stating that no data is collected, stored, or shared and all logic runs client‑side with no external APIs.",
+  "frontend/tailwind.config.js": "Tailwind configuration enabling dark mode, custom colors, animations, and plugins like typography and container queries.",
+  "project_state.json": "Project metadata describing the Insta Follower Hook simulator, its features, architecture, issues, and versioned state."
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-resolve-the-production-deployment-error-so-the-app-can-be-successfully-deployed-then-perform-a-fresh-production-deployment-retry-identify-the-root-cause-of-the-previous-deployment-failure-build-bundle-errors-canister-configuration-issues-frontend-asset-build-issues-or-backend-canister-build-issues-and-apply-the-minimal-code-config-changes-needed-to-make-deployment-succeed-without-changing-existing-app-behavior",
+      "featureTitle": "Resolve the production deployment error so the app can be successfully deployed, then perform a fresh production deployment retry. Identify the root cause of the previous deployment failure (build/bundle errors, canister configuration issues, frontend asset build issues, or backend canister build issues) and apply the minimal code/config changes needed to make deployment succeed without changing existing app behavior.",
+      "files": [
+        "frontend/src/components/SiteLayout.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/DisclaimerPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/HowItWorksPage.tsx",
+        "frontend/src/pages/PrivacyPolicyPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

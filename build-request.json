@@ -1,0 +1,40 @@
+{
+  "kind": "build_request",
+  "title": "Fix production deployment failure and retry deploy",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "text": "Resolve the production deployment error so the app can be successfully deployed, then perform a fresh production deployment retry. Identify the root cause of the previous deployment failure (build/bundle errors, canister configuration issues, frontend asset build issues, or backend canister build issues) and apply the minimal code/config changes needed to make deployment succeed without changing existing app behavior.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "try again"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A production deployment completes successfully with no deployment errors.",
+        "After deployment, the app loads in the browser and the existing routes render (Home, How It Works, Disclaimer, About Us, Contact, Privacy Policy).",
+        "The Home page simulator flow still works end-to-end: click \"Get Followers\" shows the 60-second loading state and then shows exactly one random result message.",
+        "No new external API calls are introduced; the simulator logic remains client-side only."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/components/ui (read-only components must be composed, not edited).",
+    "Do not edit frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, or frontend/src/main.tsx (immutable paths).",
+    "Keep the backend as a single Motoko actor in backend/main.mo; only add migration.mo if an existing stable state upgrade requires it.",
+    "Do not add external API calls or any real Instagram integration; do not collect or store passwords."
+  ],
+  "nonGoals": [
+    "Adding new pages, new gameplay features, or changing existing UI copy beyond what is strictly necessary to fix deployment.",
+    "Implementing new backend functionality (the app remains frontend-only for the simulator logic)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
